@@ -72,8 +72,14 @@
           >Clients</a
         > -->
       </nav>
+      <v-icon
+        name="bell"
+        v-on:click="gotoNotifications"
+        class="cursor-pointer"
+      ></v-icon>
       <button
         class="
+          ml-4
           inline-flex
           items-center
           bg-gray-100
@@ -117,6 +123,9 @@ export default {
           window.location.href = "/";
         }
       });
+    },
+    gotoNotifications() {
+      window.location.href = "/admin/notifications";
     },
   },
   props: ["active"],

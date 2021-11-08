@@ -12,14 +12,12 @@
 
 <script>
 import Navbar from "../../components/Navbar.vue";
-import ListingMapper from "../../components/ListingMapper.vue";
 import ListingCard from "../../components/ListingCard.vue";
 import Dropdown from "../../components/Dropdown.vue";
 export default {
   name: "AdminListingsPage",
   components: {
     Navbar,
-    ListingMapper,
     Dropdown,
     ListingCard,
   },

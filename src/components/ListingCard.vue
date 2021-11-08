@@ -110,6 +110,13 @@
           "
           >listing_id: {{ listing.listing.id }}</span
         >
+        <v-icon
+          name="edit"
+          v-tooltip="'Edit'"
+          v-on:click="editListing(listing.listing_id)"
+          class="float-right cursor-pointer"
+          scale="1.4"
+        ></v-icon>
       </div>
     </div>
   </div>
@@ -131,6 +138,9 @@ export default {
   methods: {
     toListingPage(listing_id) {
       window.location.href = `/admin/listing/${listing_id}`;
+    },
+    editListing(listing_id) {
+      window.location.href = `/admin/edit/listing?id=${listing_id}`;
     },
   },
 };

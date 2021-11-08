@@ -4,6 +4,10 @@ import HomePage from "./pages/HomePage.vue";
 import LoginPage from "./pages/LoginPage.vue";
 import InsertListingPage from "./pages/InsertListingPage.vue";
 import AdminListingsPage from "./pages/admin/AdminListingsPage.vue";
+import "vue-awesome/icons";
+import Icon from "vue-awesome/components/Icon";
+
+Vue.component("v-icon", Icon);
 
 import "tailwindcss/tailwind.css";
 
