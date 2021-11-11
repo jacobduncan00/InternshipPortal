@@ -33,6 +33,7 @@ export default {
         client: listings[listing].client,
         listing: listings[listing].listing,
       };
+      console.log(listings[listing].listing);
       switch (listings[listing].listing.status) {
         case "active":
           this.active_listings.push(listingObj);

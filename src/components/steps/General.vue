@@ -42,7 +42,7 @@
               rounded
               py-3
               px-4
-              mb-3
+              mb-6
             "
             v-on:change="nameChange"
             required=""
@@ -151,6 +151,7 @@
                 py-3
                 px-4
                 pr-8
+                mb-6
                 rounded
               "
               v-on:change="stateChange"

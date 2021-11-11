@@ -16,7 +16,7 @@
       "
     >
       <div class="text-center mb-12 mt-4">
-        <div class="text-3xl">{{ title }}</div>
+        <div class="text-3xl">{{ this.positionTitle }}</div>
       </div>
       <div class="text-justify mb-12">
         <div class="text-lg p-2">
@@ -35,10 +35,6 @@
           <span class="font-bold"> Company Zip Code: </span>{{ this.zip }}
         </div>
         <div class="text-lg p-2">
-          <span class="font-bold"> Position Title: </span
-          >{{ this.positionTitle }}
-        </div>
-        <div class="text-lg p-2">
           <span class="font-bold"> Minimum Qualifications: </span
           >{{ this.minQual }}
         </div>
@@ -53,6 +49,15 @@
         <div class="text-lg p-2">
           <span class="font-bold"> Additional Information: </span
           >{{ this.addInfo }}
+        </div>
+        <div class="text-lg p-2">
+          <span class="font-bold"> Duration: </span>{{ this.duration }} weeks
+        </div>
+        <div class="text-lg p-2">
+          <span class="font-bold"> Open Date: </span>{{ this.openDate }}
+        </div>
+        <div class="text-lg p-2">
+          <span class="font-bold"> Close Date: </span>{{ this.closeDate }}
         </div>
       </div>
     </div>
@@ -73,12 +78,9 @@ export default {
     "prefQual",
     "posResp",
     "addInfo",
+    "duration",
+    "openDate",
+    "closeDate",
   ],
-  data() {
-    return {
-      title: "Software Developer Intern",
-      company_name: "Amazon",
-    };
-  },
 };
 </script>

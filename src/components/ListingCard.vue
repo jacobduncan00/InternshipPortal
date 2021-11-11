@@ -52,6 +52,28 @@
             listing.listing.pos_responsibility
           }}</span>
         </p>
+        <p class="text-black font-semibold text-base">
+          Duration:
+          <span class="text-gray-700 font-normal"
+            >{{
+              listing.listing.duration != null
+                ? listing.listing.duration + " weeks"
+                : ""
+            }}
+          </span>
+        </p>
+        <p class="text-black font-semibold text-base">
+          Open Date:
+          <span class="text-gray-700 font-normal">{{
+            listing.listing.app_open
+          }}</span>
+        </p>
+        <p class="text-black font-semibold text-base">
+          Close Date:
+          <span class="text-gray-700 font-normal">{{
+            listing.listing.app_close
+          }}</span>
+        </p>
       </div>
       <div class="px-6 pt-4 pb-2">
         <span
@@ -112,8 +134,7 @@
         >
         <v-icon
           name="edit"
-          v-tooltip="'Edit'"
-          v-on:click="editListing(listing.listing_id)"
+          v-on:click="editListing(listing.listing.id)"
           class="float-right cursor-pointer"
           scale="1.4"
         ></v-icon>

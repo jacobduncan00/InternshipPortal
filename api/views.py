@@ -43,7 +43,6 @@ def admin():
     if 'username' in session:
         return render_template('admin/admin.html', page_title='Admin Dashboard')
     else:
-        # Do we want to return to homepage or somewhere else?
         return root()
 
 
@@ -57,7 +56,18 @@ def admin_listings():
     if 'username' in session:
         return render_template('admin/admin_listings.html', page_title='Admin Dashboard | Listings')
     else:
-        # Do we want to return to homepage or somewhere else?
+        return root()
+
+
+@views.route('/admin/edit/listing')
+def admin_edit_listing():
+    """Admin Edit Listing page view route.
+    This function runs whenver the admin page ('/admin/edit/listing') is requested.
+        ex) -> localhost:5000/admin/edit/listing
+    """
+    if 'username' in session:
+        return render_template('admin/edit_listing.html', page_title='Admin Dashboard | Edit Listing')
+    else:
         return root()
 
 

@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage.vue";
 import LoginPage from "./pages/LoginPage.vue";
 import InsertListingPage from "./pages/InsertListingPage.vue";
 import AdminListingsPage from "./pages/admin/AdminListingsPage.vue";
+import EditListingPage from "./pages/admin/EditListingPage.vue";
 import "vue-awesome/icons";
 import Icon from "vue-awesome/components/Icon";
 
@@ -22,6 +23,7 @@ var app = new Vue({
     contactpage: ContactPage,
     loginpage: LoginPage,
     insertpage: InsertListingPage,
+    editlistingpage: EditListingPage,
   },
   delimiters: ["[[", "]]"],
 });

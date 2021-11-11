@@ -229,6 +229,9 @@
       :prefQualChanged="updatePrefQualifications"
       :posResChanged="updatePositionResponsibilities"
       :addInfoChanged="updateAdditionalInfo"
+      :durationChanged="updateDuration"
+      :openDateChanged="updateOpenDate"
+      :closeDateChanged="updateCloseDate"
       :class="isSpecificationsHidden ? 'hidden' : ''"
     />
     <Review
@@ -242,6 +245,9 @@
       :prefQual="prefQualifications"
       :posResp="positionResponsibilities"
       :addInfo="additionalInfo"
+      :duration="duration"
+      :openDate="openDate"
+      :closeDate="closeDate"
       :class="isReviewHidden ? 'hidden' : ''"
     />
     <Confirm
@@ -333,6 +339,9 @@ export default {
       prefQualifications: "",
       positionResponsibilities: "",
       additionalInfo: "",
+      duration: "",
+      openDate: "",
+      closeDate: "",
     };
   },
   methods: {
@@ -411,7 +420,6 @@ export default {
 
     updateName(newName) {
       this.clientName = newName;
-      console.log(this.clientName);
     },
     updateAddress(newAddress) {
       this.clientAddress = newAddress;
@@ -431,23 +439,27 @@ export default {
     },
     updatePositionTitle(newTitle) {
       this.positionTitle = newTitle;
-      console.log(this.positionTitle);
     },
     updateMinQualifications(newMinQual) {
       this.minQualifications = newMinQual;
-      console.log(this.minQualifications);
     },
     updatePrefQualifications(newPrefQual) {
       this.prefQualifications = newPrefQual;
-      console.log(this.prefQualifications);
     },
     updatePositionResponsibilities(newPosResp) {
       this.positionResponsibilities = newPosResp;
-      console.log(this.positionResponsibilities);
     },
     updateAdditionalInfo(newAddInfo) {
       this.additionalInfo = newAddInfo;
-      console.log(this.additionalInfo);
+    },
+    updateDuration(newDuration) {
+      this.duration = newDuration;
+    },
+    updateOpenDate(newOpenDate) {
+      this.openDate = newOpenDate;
+    },
+    updateCloseDate(newCloseDate) {
+      this.closeDate = newCloseDate;
     },
 
     submitListing() {
@@ -462,6 +474,9 @@ export default {
         min_qualifications: this.minQualifications,
         pref_qualifications: this.prefQualifications,
         additional_info: this.additionalInfo,
+        duration: this.duration,
+        app_open: this.openDate,
+        app_close: this.closeDate,
       };
       console.log(body);
       console.log(JSON.stringify(body));

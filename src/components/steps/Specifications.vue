@@ -43,7 +43,6 @@
               rounded
               py-3
               px-4
-              mb-3
             "
             required=""
             id="grid-company-name"
@@ -158,6 +157,7 @@
               rounded
               py-3
               px-4
+              mb-6
               resize-none
             "
             rows="6"
@@ -170,6 +170,115 @@
             "
             v-model="positionResponsibilities"
             v-on:change="posResChange"
+          />
+        </div>
+        <div class="md:w-full px-3">
+          <label
+            class="
+              block
+              uppercase
+              tracking-wide
+              text-grey-darker text-xs
+              font-bold
+              mb-2
+            "
+            for="grid-position-responsibilities"
+          >
+            Duration
+          </label>
+          <input
+            type="number"
+            class="
+              appearance-none
+              block
+              w-full
+              bg-grey-lighter
+              text-grey-darker
+              border
+              boder-grey-lighter
+              rounded
+              py-3
+              px-4
+              mb-6
+              reize-none
+            "
+            required
+            id="grid-duration"
+            placeholder="Number of weeks"
+            v-model="duration"
+            v-on:change="durationChange"
+          />
+        </div>
+        <div class="md:w-full px-3">
+          <label
+            class="
+              block
+              uppercase
+              tracking-wide
+              text-grey-darker text-xs
+              font-bold
+              mb-2
+            "
+            for="grid-position-responsibilities"
+          >
+            Open Date
+          </label>
+          <input
+            type="date"
+            class="
+              appearance-none
+              block
+              w-full
+              bg-grey-lighter
+              text-grey-darker
+              border
+              boder-grey-lighter
+              rounded
+              py-3
+              px-4
+              mb-6
+              reize-none
+            "
+            required
+            id="grid-open-date"
+            v-model="openDate"
+            v-on:change="openDateChange"
+          />
+        </div>
+        <div class="md:w-full px-3">
+          <label
+            class="
+              block
+              uppercase
+              tracking-wide
+              text-grey-darker text-xs
+              font-bold
+              mb-2
+            "
+            for="grid-position-responsibilities"
+          >
+            Close Date
+          </label>
+          <input
+            type="date"
+            class="
+              appearance-none
+              block
+              w-full
+              bg-grey-lighter
+              text-grey-darker
+              border
+              boder-grey-lighter
+              rounded
+              py-3
+              px-4
+              mb-6
+              reize-none
+            "
+            required
+            id="grid-close-date"
+            v-model="closeDate"
+            v-on:change="closeDateChange"
           />
         </div>
         <div class="md:w-full px-3">
@@ -225,6 +334,9 @@ export default {
     "prefQualChanged",
     "posResChanged",
     "addInfoChanged",
+    "durationChanged",
+    "openDateChanged",
+    "closeDateChanged",
   ],
   data() {
     return {
@@ -233,6 +345,9 @@ export default {
       prefQualifications: "",
       positionResponsibilities: "",
       additionalInfo: "",
+      duration: "",
+      openDate: "",
+      closeDate: "",
     };
   },
   methods: {
@@ -250,6 +365,15 @@ export default {
     },
     addInfoChange() {
       this.addInfoChanged(this.additionalInfo);
+    },
+    durationChange() {
+      this.durationChanged(this.duration);
+    },
+    openDateChange() {
+      this.openDateChanged(this.openDate);
+    },
+    closeDateChange() {
+      this.closeDateChanged(this.closeDate);
     },
   },
 };
