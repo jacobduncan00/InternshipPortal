@@ -1,0 +1,10 @@
+FROM postgres:14.1-alpine
+RUN addgroup -S dbuser && adduser -S dbuser -G dbuser
+RUN chown -R dbuser:dbuser /home/dbuser/
+RUN echo 'dbuser  ALL=(ALL) /bin/su' >>  /etc/sudoers
+USER dbuser
+COPY db-entrypoint.sh .
+RUN chmod +x ./db-entrypoint.sh
+ENTRYPOINT ["sh", "db-entrypoint.sh"]
+STOPSIGNAL SIGINT
+CMD ["postgres"]

@@ -1,0 +1,26 @@
+# Base python package
+FROM python:3.8-slim-buster
+
+# Working directory
+WORKDIR /app
+
+# Copy the dependencies
+COPY requirements.txt ./
+
+# Install the dependencies
+RUN pip3 install -r requirements.txt
+
+# Copy the files
+COPY . .
+
+# Expose a port
+EXPOSE 5000
+
+COPY api-entrypoint.sh .
+
+RUN chmod +x ./api-entrypoint.sh
+
+ENTRYPOINT ["sh", "api-entrypoint.sh"]
+
+# Executable commands
+CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]

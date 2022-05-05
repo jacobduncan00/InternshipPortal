@@ -8,7 +8,6 @@ SQLAlchemy-serializer
 gunicorn
 requests
 beautifulsoup4
-psycopg2
 psycopg2-binary
 bcrypt
 python-dotenv

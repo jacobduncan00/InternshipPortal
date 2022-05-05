@@ -1,0 +1,42 @@
+version: "3.8"
+
+services:
+  flask-api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    ports:
+      - 5000:5000
+    depends_on:
+      - psql-db
+    links:
+      - psql-db
+    environment:
+      DB_USERNAME: postgres
+      DB_PASSWORD: postgres
+      DB_PORT: 5432
+      DB_DBNAME: internship_portal
+      SECRET_KEY: secret
+      FLASK_APP: main.py
+
+  vue-client:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+
+  psql-db:
+    build:
+      context: .
+      dockerfile: Dockerfile.db
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - db:/var/lib/postgresql/data
+
+volumes:
+  db:
+    driver: local
