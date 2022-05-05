@@ -16,9 +16,11 @@ COPY . .
 # Expose a port
 EXPOSE 5000
 
+USER root
+
 COPY api-entrypoint.sh .
 
-RUN chmod +x ./api-entrypoint.sh
+RUN chmod 755 ./api-entrypoint.sh
 
 ENTRYPOINT ["sh", "api-entrypoint.sh"]
 

@@ -9,8 +9,6 @@ services:
       - 5000:5000
     depends_on:
       - psql-db
-    links:
-      - psql-db
     environment:
       DB_USERNAME: postgres
       DB_PASSWORD: postgres

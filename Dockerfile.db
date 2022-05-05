@@ -4,7 +4,9 @@ RUN chown -R dbuser:dbuser /home/dbuser/
 RUN echo 'dbuser  ALL=(ALL) /bin/su' >>  /etc/sudoers
 USER dbuser
 COPY db-entrypoint.sh .
-RUN chmod +x ./db-entrypoint.sh
+USER root
+RUN chmod 755 ./db-entrypoint.sh
+USER dbuser
 ENTRYPOINT ["sh", "db-entrypoint.sh"]
 STOPSIGNAL SIGINT
 CMD ["postgres"]
